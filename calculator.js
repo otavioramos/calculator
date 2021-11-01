@@ -8,7 +8,11 @@ app.listen(3000, () => {
     console.log("Server is up on port 3000");
 });
 
-app.post("/", (req, res) => {
+app.get("/sum", (req, res) => {
+    res.sendFile(__dirname + "/sum.html");
+});
+
+app.post("/sum", (req, res) => {
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     const result = num1 + num2;
